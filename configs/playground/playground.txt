@@ -1,7 +1,7 @@
 ### INPUT
-datadir = ./data/lf_data
-scene = africa
-expname = africa
+datadir = ./data
+scene = playground
+expname = debug
 basedir = ./logs
 config = None
 ckpt_path = None
