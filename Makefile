@@ -12,4 +12,4 @@ preprocess: download
 	sh +x bin/preprocess_data.sh data/playground
 
 download:
-	gsutil -m cp -r gs://lucas.netdron.es/data .
+	if [ ! -d ./data ]; then gsutil -m cp -r gs://lucas.netdron.es/data .; fi
