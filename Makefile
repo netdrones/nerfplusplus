@@ -23,4 +23,4 @@ preprocess-playground: download-playground
 	sh +x bin/preprocess_data.sh data/playground
 
 download-playground:
-	if [ ! -d ./data.playground ]; then gsutil -m cp -r gs://lucas.netdron.es/data .; fi
+	if [ ! -d ./data/playground ]; then gsutil -m cp -r gs://lucas.netdron.es/data .; fi
