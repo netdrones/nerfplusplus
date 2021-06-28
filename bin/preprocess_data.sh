@@ -31,4 +31,4 @@ colmap image_undistorter \
 
 python data_utils/generate_poses.py $WORKSPACE_PATH
 python data_utils/data_loader.py $WORKSPACE_PATH
-rm -r $WORKSPACE_PATH/posed_images $WORKSPACE_PATH/dense $WORKSPACE_PATH/sparse $WORKSPACE_PATH/database.db
+# rm -r $WORKSPACE_PATH/posed_images $WORKSPACE_PATH/dense $WORKSPACE_PATH/sparse $WORKSPACE_PATH/database.db

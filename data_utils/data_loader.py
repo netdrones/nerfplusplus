@@ -21,7 +21,7 @@ def load_cameras(jsonfile):
 
     return data, train, test, val
 
-def write_txt(keys, data, out_dir, num_gpus):
+def write_txt(keys, data, out_dir):
     rgb_dir = os.path.join(out_dir, 'rgb')
     pose_dir = os.path.join(out_dir, 'pose')
     parent_dir = os.path.join(out_dir, '../dense')
@@ -60,6 +60,6 @@ if __name__ == '__main__':
 
     data, train, test, val = load_cameras(os.path.join(workspace_dir, 'posed_images/cameras_normalized.json'))
 
-    write_txt(train, data, train_dir, num_gpus)
-    write_txt(test, data, test_dir, num_gpus)
-    write_txt(val, data, val_dir, num_gpus)
+    write_txt(train, data, train_dir)
+    write_txt(test, data, test_dir)
+    write_txt(val, data, val_dir)

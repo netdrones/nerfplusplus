@@ -5,6 +5,17 @@ include include.mk
 install:
 	conda env update -f environment.yml
 
+eval-truck:
+	gsutil -m cp -r gs://lucas.netdron.es/tanks_and_temples/tat_training_Truck/camera_path/ .
+	python ddp_test_nerf.py --config configs/truck/truck.txt \
+	  --render_splits test,camera_path
+
+train-truck: preprocess-truck
+	python ddp_train_nerf.py --config configs/truck/truck.txt
+
+preprocess-truck:
+	sh +x bin/preprocess_data.sh data/truck
+
 train-picnic: preprocess-picnic
 	python ddp_train_nerf.py --config configs/picnic_nerf_001/picnic_nerf_001.txt
 
