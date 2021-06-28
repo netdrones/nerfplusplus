@@ -33,7 +33,7 @@ def load_data_split(basedir, scene, split, skip=1, try_load_min_depth=True, only
 
     if basedir[-1] == '/':          # remove trailing '/'
         basedir = basedir[:-1]
-     
+
     split_dir = '{}/{}/{}'.format(basedir, scene, split)
 
     if only_img_files:
@@ -81,6 +81,8 @@ def load_data_split(basedir, scene, split, skip=1, try_load_min_depth=True, only
     train_imgfile = find_files('{}/{}/train/rgb'.format(basedir, scene), exts=['*.png', '*.jpg'])[0]
     train_im = imageio.imread(train_imgfile)
     H, W = train_im.shape[:2]
+    H += 1
+    W += 1
 
     # create ray samplers
     ray_samplers = []

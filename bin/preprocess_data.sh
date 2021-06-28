@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WORKSPACE_PATH=$1
+NUM_GPUS=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)
 
 colmap feature_extractor --database_path $WORKSPACE_PATH/database.db \
   --image_path $WORKSPACE_PATH/images \
