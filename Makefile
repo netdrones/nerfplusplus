@@ -19,7 +19,7 @@ eval-playground:
 	python ddp_test_nerf.py --config configs/playground/playground.txt \
 	  --render_splits test,camera_path
 
-train-playground:
+train-playground: preprocess-playground
 	python ddp_train_nerf.py --config configs/playground/playground.txt
 
 preprocess-playground: download-playground
