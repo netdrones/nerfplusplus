@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 TRAIN = 0.95
+VAL_SIZE = 10
 
 def load_cameras(jsonfile):
     with open(jsonfile) as f:
@@ -14,7 +15,7 @@ def load_cameras(jsonfile):
     # Generate train/test/val splits
     keys = list(data.keys())
     train, test = train_test_split(keys, test_size=(1-TRAIN))
-    train, val = train_test_split(train, test_size=0.5)
+    val = np.random.choice(test, 10, replace=False)
 
     return data, train, test, val
 
